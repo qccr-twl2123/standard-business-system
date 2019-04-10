@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>uber-欢迎登录</title>
+    <title>标准电商系统-欢迎登录</title>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link href="${base}/BJUI/login/css/login.css" rel="stylesheet" />
 </head>
@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <div style="background-color:#fff; width:100%;margin:50px auto;text-align:center;">Copyright &copy; 2015- <span id="y"></span> uber后台系统</div>
+    <div style="background-color:#fff; width:100%;margin:50px auto;text-align:center;">Copyright &copy; 2015- <span id="y"></span> 标准电商系统后台系统</div>
 <script language="javascript">document.getElementById("y").innerHTML = new Date().getFullYear();</script>
 </body>
 </html>

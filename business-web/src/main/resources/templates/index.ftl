@@ -7,9 +7,9 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="referrer" content="no-referrer" />
-<title>uber</title>
-<meta name="Keywords" content="uber后台系统" />
-<meta name="Description" content="uber后台系统" />
+<title>标准电商系统</title>
+<meta name="Keywords" content="标准电商系统" />
+<meta name="Description" content="标准电商系统" />
 
 <link href="favicon.ico" rel="icon" type="image/x-icon" />
 
@@ -219,7 +219,7 @@
 				<button type="button" class="bjui-navbar-toggle btn-default" data-toggle="collapse" data-target="#bjui-navbar-collapse">
 					<i class="fa fa-bars"></i>
 				</button>
-				<span class="bjui-navbar-logo" style="color:#fff;"><h4>uber-运营后台</h4></span>
+				<span class="bjui-navbar-logo" style="color:#fff;"><h4>标准电商系统-运营后台</h4></span>
 			</div>
 			<nav id="bjui-navbar-collapse">
 				<ul class="bjui-navbar-right">
@@ -351,7 +351,7 @@
 			</div>
 		</div>
 		<footer id="bjui-footer">
-			Copyright &copy; 2015 - <span id="y"></span> <a href="http://www.roncoo.com/" target="_blank">uber</a>
+			Copyright &copy; 2015 - <span id="y"></span> <a href="http://www.roncoo.com/" target="_blank">标准电商系统</a>
 			<script language="javascript">document.getElementById("y").innerHTML = new Date().getFullYear();</script>
 		</footer>
 	</div>
