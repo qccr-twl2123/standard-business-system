@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.arcsoft.facego.common.dao.impl.mapper.TokenMapper" >
-  <resultMap id="BaseResultMap" type="com.arcsoft.facego.common.entity.Token" >
+<mapper namespace="com.business.system.common.dao.impl.mapper.TokenMapper" >
+  <resultMap id="BaseResultMap" type="com.business.system.common.entity.Token" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="token" property="token" jdbcType="VARCHAR" />
     <result column="expire_time" property="expireTime" jdbcType="TIMESTAMP" />
@@ -71,10 +71,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, token, expire_time, status, user_id, create_person, create_time, update_person, 
+    id, token, expire_time, status, user_id, create_person, create_time, update_person,
     update_time
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.arcsoft.facego.common.entity.TokenExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.business.system.common.entity.TokenExample" >
     select
     <if test="distinct" >
       distinct
@@ -92,7 +92,7 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from token
     where id = #{id,jdbcType=BIGINT}
@@ -101,23 +101,23 @@
     delete from token
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.arcsoft.facego.common.entity.TokenExample" >
+  <delete id="deleteByExample" parameterType="com.business.system.common.entity.TokenExample" >
     delete from token
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.arcsoft.facego.common.entity.Token" >
-    insert into token (id, token, expire_time, 
-      status, user_id, create_person, 
+  <insert id="insert" parameterType="com.business.system.common.entity.Token" >
+    insert into token (id, token, expire_time,
+      status, user_id, create_person,
       create_time, update_person, update_time
       )
-    values (#{id,jdbcType=BIGINT}, #{token,jdbcType=VARCHAR}, #{expireTime,jdbcType=TIMESTAMP}, 
-      #{status,jdbcType=TINYINT}, #{userId,jdbcType=BIGINT}, #{createPerson,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=BIGINT}, #{token,jdbcType=VARCHAR}, #{expireTime,jdbcType=TIMESTAMP},
+      #{status,jdbcType=TINYINT}, #{userId,jdbcType=BIGINT}, #{createPerson,jdbcType=VARCHAR},
       #{createTime,jdbcType=TIMESTAMP}, #{updatePerson,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.arcsoft.facego.common.entity.Token" >
+  <insert id="insertSelective" parameterType="com.business.system.common.entity.Token" >
     insert into token
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -178,7 +178,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.arcsoft.facego.common.entity.TokenExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.business.system.common.entity.TokenExample" resultType="java.lang.Integer" >
     select count(*) from token
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -234,7 +234,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.arcsoft.facego.common.entity.Token" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.business.system.common.entity.Token" >
     update token
     <set >
       <if test="token != null" >
@@ -264,7 +264,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.arcsoft.facego.common.entity.Token" >
+  <update id="updateByPrimaryKey" parameterType="com.business.system.common.entity.Token" >
     update token
     set token = #{token,jdbcType=VARCHAR},
       expire_time = #{expireTime,jdbcType=TIMESTAMP},

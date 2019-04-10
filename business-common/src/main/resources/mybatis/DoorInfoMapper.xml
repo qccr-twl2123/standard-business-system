@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.arcsoft.facego.common.dao.impl.mapper.DoorInfoMapper" >
-  <resultMap id="BaseResultMap" type="com.arcsoft.facego.common.entity.DoorInfo" >
+<mapper namespace="com.business.system.common.dao.impl.mapper.DoorInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.business.system.common.entity.DoorInfo" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="code" property="code" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
@@ -72,7 +72,7 @@
   <sql id="Base_Column_List" >
     id, code, name, remark, create_person, create_time, update_person, update_time
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.arcsoft.facego.common.entity.DoorInfoExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.business.system.common.entity.DoorInfoExample" >
     select
     <if test="distinct" >
       distinct
@@ -90,7 +90,7 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from door_info
     where id = #{id,jdbcType=BIGINT}
@@ -99,21 +99,21 @@
     delete from door_info
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.arcsoft.facego.common.entity.DoorInfoExample" >
+  <delete id="deleteByExample" parameterType="com.business.system.common.entity.DoorInfoExample" >
     delete from door_info
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.arcsoft.facego.common.entity.DoorInfo" >
-    insert into door_info (id, code, name, 
-      remark, create_person, create_time, 
+  <insert id="insert" parameterType="com.business.system.common.entity.DoorInfo" >
+    insert into door_info (id, code, name,
+      remark, create_person, create_time,
       update_person, update_time)
-    values (#{id,jdbcType=BIGINT}, #{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
-      #{remark,jdbcType=VARCHAR}, #{createPerson,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+    values (#{id,jdbcType=BIGINT}, #{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+      #{remark,jdbcType=VARCHAR}, #{createPerson,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
       #{updatePerson,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.arcsoft.facego.common.entity.DoorInfo" >
+  <insert id="insertSelective" parameterType="com.business.system.common.entity.DoorInfo" >
     insert into door_info
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -168,7 +168,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.arcsoft.facego.common.entity.DoorInfoExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.business.system.common.entity.DoorInfoExample" resultType="java.lang.Integer" >
     select count(*) from door_info
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -220,7 +220,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.arcsoft.facego.common.entity.DoorInfo" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.business.system.common.entity.DoorInfo" >
     update door_info
     <set >
       <if test="code != null" >
@@ -247,7 +247,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.arcsoft.facego.common.entity.DoorInfo" >
+  <update id="updateByPrimaryKey" parameterType="com.business.system.common.entity.DoorInfo" >
     update door_info
     set code = #{code,jdbcType=VARCHAR},
       name = #{name,jdbcType=VARCHAR},

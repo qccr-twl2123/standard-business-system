@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.arcsoft.facego.common.dao.impl.mapper.VerificationLogMapper" >
-  <resultMap id="BaseResultMap" type="com.arcsoft.facego.common.entity.VerificationLog" >
+<mapper namespace="com.business.system.common.dao.impl.mapper.VerificationLogMapper" >
+  <resultMap id="BaseResultMap" type="com.business.system.common.entity.VerificationLog" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="person_id" property="personId" jdbcType="BIGINT" />
     <result column="name" property="name" jdbcType="VARCHAR" />
@@ -71,7 +71,7 @@
   <sql id="Base_Column_List" >
     id, person_id, name, create_person, create_time, update_person, update_time
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.arcsoft.facego.common.entity.VerificationLogExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.business.system.common.entity.VerificationLogExample" >
     select
     <if test="distinct" >
       distinct
@@ -89,7 +89,7 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from verification_log
     where id = #{id,jdbcType=BIGINT}
@@ -98,21 +98,21 @@
     delete from verification_log
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.arcsoft.facego.common.entity.VerificationLogExample" >
+  <delete id="deleteByExample" parameterType="com.business.system.common.entity.VerificationLogExample" >
     delete from verification_log
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.arcsoft.facego.common.entity.VerificationLog" >
-    insert into verification_log (id, person_id, name, 
-      create_person, create_time, update_person, 
+  <insert id="insert" parameterType="com.business.system.common.entity.VerificationLog" >
+    insert into verification_log (id, person_id, name,
+      create_person, create_time, update_person,
       update_time)
-    values (#{id,jdbcType=BIGINT}, #{personId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, 
-      #{createPerson,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updatePerson,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=BIGINT}, #{personId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR},
+      #{createPerson,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updatePerson,jdbcType=VARCHAR},
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.arcsoft.facego.common.entity.VerificationLog" >
+  <insert id="insertSelective" parameterType="com.business.system.common.entity.VerificationLog" >
     insert into verification_log
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -161,7 +161,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.arcsoft.facego.common.entity.VerificationLogExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.business.system.common.entity.VerificationLogExample" resultType="java.lang.Integer" >
     select count(*) from verification_log
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -209,7 +209,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.arcsoft.facego.common.entity.VerificationLog" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.business.system.common.entity.VerificationLog" >
     update verification_log
     <set >
       <if test="personId != null" >
@@ -233,7 +233,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.arcsoft.facego.common.entity.VerificationLog" >
+  <update id="updateByPrimaryKey" parameterType="com.business.system.common.entity.VerificationLog" >
     update verification_log
     set person_id = #{personId,jdbcType=BIGINT},
       name = #{name,jdbcType=VARCHAR},
