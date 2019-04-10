@@ -1,18 +1,3 @@
-/*
-Navicat MySQL Data Transfer
-
-Source Server         : arcsoft-prod
-Source Server Version : 50722
-Source Host           : 172.17.186.172:3306
-Source Database       : mark_task
-
-Target Server Type    : MYSQL
-Target Server Version : 50722
-File Encoding         : 65001
-
-Date: 2018-07-03 14:12:00
-*/
-
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
