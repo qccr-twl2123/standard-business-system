@@ -1,0 +1,22 @@
+# server
+server:
+    port: 8887
+
+# profile
+spring:
+  profiles:
+    active: local
+
+logging:
+  config: classpath:logging-config.xml
+#FD appid和appkey相关，请到官网申请  http://www.arcsoft.com.cn/ai/
+arcsoft:
+    app-id: F7vkKXYJv6H4Bouwm54nJbZy5M9EoxF9PMoSSGx817Yv
+    app-key: HWNECEj34eZVbYAt7NVjmsUfC6AP7eBfqqcuPgf9EMwh
+
+
+
+
+
+
+

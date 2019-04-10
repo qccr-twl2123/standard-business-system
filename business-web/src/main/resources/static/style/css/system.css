@@ -1,0 +1,192 @@
+.system-cont{
+	border: solid 1px #aeaeae;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 30px;
+    background-color: #fff;
+}
+.door-cont{
+	border-bottom: 1px solid #aeaeae;
+	padding-bottom: 50px;
+}
+.door-item{
+	margin-top: 20px;
+}
+.entranceGuard-item-btn{
+	margin-top: 0;
+	width: 80px;
+	margin-left: 10px;
+}
+.entranceGuard-item-btn-add{
+	background-color: #428bca;
+	color: #fff;
+}
+.entranceGuard-item-btn-add:hover{
+	color: #fff;
+}
+.entranceGuard-item-btn + .entranceGuard-item-btn{
+	margin-left: 10px;
+}
+.entranceGuard-item-btn-del{
+	border: 1px solid #f0433d;
+	color: #f0433d;
+}
+.entranceGuard-item-btn-del:hover{
+	color: #f0433d;
+}
+.title{
+	color: #428bca;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 80px;
+}
+.logo-btn{
+	display: inline-block;
+	width: 110px;
+	height: 30px;
+	border-radius: 5px;
+	border: 1px dashed #428bca;
+	color: #428bca;
+	text-align: center;
+	line-height: 30px;
+	font-size: 16px;
+	cursor: pointer;
+}
+.logo-text{
+	font-size: 12px;
+	color: #dbdbdb;
+}
+.companyInfo-logo{
+	margin: 20px 0;
+	height: 100px;
+	display: block;
+}
+.department-width{
+	width: 150px;
+}
+.department-one-width{
+	width: 100%;
+}
+.department-width + .department-width{
+	margin-left: 0;
+}
+.level-one{
+	color: #428bca;
+}
+.del-department-one,
+.update-department-one,
+.cancel-department-one,
+.change-department-one,
+.del-department-two,
+.update-department-two,
+.cancel-department-two,
+.change-department-two{
+	cursor: pointer;
+	margin-left: 5px;
+}
+.department-item{
+	line-height: 20px;
+	margin: 10px 0;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+}
+.department-item-two{
+	margin-top: 10px;
+}
+.add-department-btn{
+	display: inline-block;
+	width: 80px;
+	text-align: center;
+	height: 20px;
+	border: 1px dashed #aeaeae;
+	border-radius: 5px;
+	line-height: 20px;
+	cursor: pointer;
+	font-size: 14px;
+	vertical-align: bottom;
+}
+.add-department-btn.level-one{
+	border: 1px dashed #428bca;
+	color: #428bca;
+}
+.company-structure{
+	float: left;
+}
+.label{
+	font-size: 14px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+.employee-list{
+	margin: 20px 0;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #ccc;
+}
+.employee-item{
+	margin: 10px 0;
+}
+.employee-item .layui-input-inline{
+	margin-right: 30px;
+	margin-left: 10px;
+}
+.for-admin{
+	margin-top: 0;
+}
+.admin-update{
+	cursor: pointer;
+	color: #428bca;
+	margin-left: 10px;
+}
+.admin-cancel{
+	cursor: pointer;
+	color: #f0433d;
+}
+.admin-item .layui-input-inline{
+	margin-right: 30px;
+}
+.admin-item .btn{
+	margin-right: 30px;
+	cursor: pointer;
+}
+.admin-item .btn.admin-update{
+	color: #428bca;
+}
+.admin-item .btn.admin-update{
+	color: #f0433d;
+}
+.open-cont{
+	width: 80%;
+	margin-left: 10%;
+	text-align: left;
+}
+.open-cont span{
+	font-size: 16px;
+	margin-top: 30px;
+	color: #428bca;
+	display: inline-block;
+	width: 20%;
+}
+.open-cont .layui-input{
+	width: 75%;
+	display: inline-block;
+}
+.open-cont span.name{
+	margin-top: 0;
+	color: #363636;
+}
+.open-cont .btn-cont{
+	text-align: center;
+}
+.submit-cont {
+    margin-top: 30px;
+    text-align: center;
+}
+.submit-cont .layui-btn {
+    background-color: #1E9FFF;
+    color: #fff;
+    border: none;
+}
+#fixed,#flex{
+	margin-top: 20px;
+	display: none;
+}

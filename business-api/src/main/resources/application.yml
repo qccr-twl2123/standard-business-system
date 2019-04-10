@@ -1,0 +1,15 @@
+# server
+server:
+    port: 9999
+
+# profile
+spring:
+    profiles:
+        active: local
+    swagger:
+      base-package: com.arcsoft.facego.api.controller
+      enabled: true
+
+
+
+

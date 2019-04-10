@@ -1,2 +1,1 @@
-# standard-business-system
-标准电商系统架构
+#### 标准电商系统解决方案
