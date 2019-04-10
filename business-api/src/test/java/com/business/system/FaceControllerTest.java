@@ -1,6 +1,5 @@
 package com.business.system;
 
-import com.business.system.api.controller.FaceController;
 import com.business.system.api.model.req.CompareFeatureReq;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,8 +14,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.List;
-import java.util.concurrent.CountDownLatch;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
