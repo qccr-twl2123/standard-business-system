@@ -47,7 +47,8 @@ public class BrandController extends BaseController {
 	@RequestMapping(value = "/save")
 	public String save(@ModelAttribute BrandQO qo){
 		if(qo.getImageFile() != null){
-			qo.setLogo(imageService.uploadImage(qo.getImageFile()));
+			qo.setLogo("klk");
+//			qo.setLogo(imageService.uploadImage(qo.getImageFile()));
 		}
 
 		if (service.save(qo) > 0) {

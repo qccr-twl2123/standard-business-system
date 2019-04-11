@@ -1,6 +1,6 @@
 <#assign base=request.contextPath />
 <div class="bjui-pageContent">
-    <form action="${base}/admin/brand/save" data-toggle="validate" method="post">
+    <form action="${base}/admin/brand/save" data-toggle="validate" enctype='multipart/form-data' method="post" >
         <div class="form-group">
             <label class="control-label x85">品牌名称：</label>
             <input type="text" name="name" value="" placeholder="品牌名称" size="20" data-rule="required"/>
