@@ -16,7 +16,7 @@
 
 package com.business.system.common.oss;
 
-import com.xiaoleilu.hutool.date.DateUtil;
+import cn.hutool.core.date.DateUtil;
 import org.apache.commons.lang.StringUtils;
 
 import java.io.InputStream;

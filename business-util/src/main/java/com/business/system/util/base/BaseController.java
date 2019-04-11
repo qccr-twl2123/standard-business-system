@@ -2,7 +2,10 @@ package com.business.system.util.base;
 
 import java.io.DataInputStream;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -10,6 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import cn.hutool.json.JSONUtil;
 import com.business.system.util.bjui.Bjui;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.web.bind.ServletRequestDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 
 /**
  * 控制基础类，所以controller都应该继承这个类
@@ -21,6 +27,14 @@ public class BaseController extends BaseRoncoo {
 	public static final String TEXT_UTF8 = "text/html;charset=UTF-8";
 	public static final String JSON_UTF8 = "application/json;charset=UTF-8";
 	public static final String XML_UTF8 = "application/xml;charset=UTF-8";
+
+	@InitBinder
+	protected void initBinder(HttpServletRequest request,
+							  ServletRequestDataBinder binder) throws Exception {
+		DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		CustomDateEditor dateEditor = new CustomDateEditor(fmt, true);
+		binder.registerCustomEditor(Date.class, dateEditor);
+	}
 
 	public static TreeMap<String, Object> getParamMap(HttpServletRequest request) {
 		TreeMap<String, Object> paramMap = new TreeMap<>();

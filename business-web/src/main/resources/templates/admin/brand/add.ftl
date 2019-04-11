@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
             <label class="control-label x85">入驻时间：</label>
-            <input type="text" data-pattern="yyyy-MM-dd" name="enterTime" value="" placeholder="品牌中文" size="20" data-rule="required"/>
+            <input type="text" data-pattern="yyyy-MM-dd HH:mm:ss" data-toggle="datepicker" name="enterTime" value="" placeholder="入驻时间" size="20" data-rule="required"/>
         </div>
 
     </form>

@@ -4,9 +4,10 @@ import com.business.system.common.dao.BrandDao;
 import com.business.system.common.entity.Brand;
 import com.business.system.common.entity.BrandExample;
 import com.business.system.common.mapper.BrandMapper;
-import com.business.system.common.util.PageUtil;
 import com.business.system.util.bjui.Page;
 import java.util.List;
+
+import com.business.system.util.bjui.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

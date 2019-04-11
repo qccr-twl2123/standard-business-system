@@ -42,6 +42,7 @@ public class BrandQO implements Serializable {
      * 入驻时间
      */
     private Date enterTime;
+
     /**
      * 品牌类型: 1综合 2家电
      */

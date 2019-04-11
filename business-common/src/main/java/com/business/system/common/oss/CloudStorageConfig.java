@@ -1,9 +1,9 @@
 package com.business.system.common.oss;
 
 
-import com.roncoo.recharge.common.oss.group.AliyunGroup;
-import com.roncoo.recharge.common.oss.group.QcloudGroup;
-import com.roncoo.recharge.common.oss.group.QiniuGroup;
+import com.business.system.common.oss.group.AliyunGroup;
+import com.business.system.common.oss.group.QcloudGroup;
+import com.business.system.common.oss.group.QiniuGroup;
 import lombok.Data;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
