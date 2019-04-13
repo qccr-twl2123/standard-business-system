@@ -1,5 +1,6 @@
 package com.business.system.web.service;
 
+import com.business.system.util.ObjectConvert;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,8 +14,10 @@ import com.business.system.common.entity.FormatTypeDetail;
 import com.business.system.common.entity.FormatTypeDetailExample;
 import com.business.system.common.entity.FormatTypeDetailExample.Criteria;
 
+import java.util.List;
+
 /**
- * 规格明细表 
+ * 规格明细表
  *
  * @author mark
  * @since 2019-04-11
@@ -26,9 +29,7 @@ public class FormatTypeDetailService {
 	private FormatTypeDetailDao dao;
 
 	public Page<FormatTypeDetailVO> listForPage(int pageCurrent, int pageSize, FormatTypeDetailQO qo) {
-	    FormatTypeDetailExample example = new FormatTypeDetailExample();
-	    Criteria c = example.createCriteria();
-	    example.setOrderByClause(" id desc ");
+		FormatTypeDetailExample example = generate(qo);
         Page<FormatTypeDetail> page = dao.listForPage(pageCurrent, pageSize, example);
         return PageUtil.transform(page, FormatTypeDetailVO.class);
 	}
@@ -55,5 +56,22 @@ public class FormatTypeDetailService {
         BeanUtils.copyProperties(qo, record);
 		return dao.updateById(record);
 	}
-	
+
+
+	public List<FormatTypeDetailVO> queryForList(FormatTypeDetailQO qo){
+		FormatTypeDetailExample example = generate(qo);
+		List<FormatTypeDetail> formatTypeDetails = dao.listByExample(example);
+		return ObjectConvert.convertList(formatTypeDetails, FormatTypeDetailVO.class);
+	}
+
+
+	public FormatTypeDetailExample generate(FormatTypeDetailQO qo){
+		FormatTypeDetailExample example = new FormatTypeDetailExample();
+		Criteria c = example.createCriteria();
+		example.setOrderByClause(" id desc ");
+		if(qo.getFormatTypeId() != null){
+			c.andFormatTypeIdEqualTo(qo.getFormatTypeId());
+		}
+		return example;
+	}
 }

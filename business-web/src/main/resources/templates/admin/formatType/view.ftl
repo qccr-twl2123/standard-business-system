@@ -12,14 +12,13 @@
                 <!-- Tab panes -->
                 <div class="tab-content">
                     <div class="tab-pane fade active in" id="home">
-                        <#include "/admin/formateType/info.ftl" />
+                        <#include "info.ftl" />
                     </div>
                     <div class="tab-pane fade" id="valueTab">
-                        规格值页面
+                        <#include "formatTypeDetail.ftl" />
                     </div>
                     <div class="tab-pane fade" id="aliasTab">
-                        别名管理
-                        <#--<#include "/admin/goods/goodsSpec.ftl" />-->
+                        <#--<#include "/admin/formateType/formatTypeDetail.ftl" />-->
                     </div>
                 </div>
             </fieldset>

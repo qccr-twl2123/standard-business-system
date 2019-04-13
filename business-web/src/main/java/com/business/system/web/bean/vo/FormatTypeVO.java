@@ -52,6 +52,10 @@ public class FormatTypeVO implements Serializable {
      */
     private Date updateTime;
 
+    /**
+     * 规格值
+     */
+    private String formatTypeValue;
 
 
 

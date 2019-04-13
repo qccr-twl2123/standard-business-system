@@ -86,6 +86,21 @@ public class FormatTypeController extends BaseController {
 		return error("修改失败");
 	}
 
+	@ResponseBody
+	@RequestMapping(value = "/saveFormatTypeDetail")
+	public String saveFormatTypeDetail(@ModelAttribute FormatTypeDetailQO qo){
+		if(formatTypeDetailService.save(qo) > 0){
+			return success(TARGETID);
+		}
+		return error("添加失败");
+	}
+
+	@RequestMapping(value = "addFormatTypeDetail")
+	public void addFormatTypeDetail(@ModelAttribute FormatTypeDetailQO qo, ModelMap modelMap){
+		modelMap.put("bean", qo);
+
+	}
+
 	@RequestMapping(value = "/view")
 	public void view(@RequestParam(value = "id") Long id, ModelMap modelMap){
 		modelMap.put("bean", service.getById(id));

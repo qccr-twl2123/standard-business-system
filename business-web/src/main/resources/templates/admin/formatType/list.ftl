@@ -32,9 +32,9 @@
                     <td align="center">${bean_index+1}</td>
                     <td>${bean.name!}</td>
                     <td>${bean.showImg!}</td>
-                    <td>${bean.formateTypeValue!}</td>
+                    <td>${bean.formatTypeValue!}</td>
                     <td>
-                        <a href="${base}/admin/formatType/view?id=${bean.id}" class="btn btn-blue" data-toggle="dialog" data-id="formatType-view" data-options="{title:'查看', height:350}">查看 </a>
+                        <a href="${base}/admin/formatType/view?id=${bean.id}" class="btn btn-blue" data-toggle="navtab" data-id="formatType-view" data-options="{title:'规格详情', height:350}">查看 </a>
                     </td>
                 </tr>
             </#list>
