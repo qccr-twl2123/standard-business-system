@@ -1,8 +1,7 @@
 package com.business.system.web.controller.admin;
 
 import cn.hutool.core.collection.CollectionUtil;
-import com.business.system.common.entity.FormatTypeDetail;
-import com.business.system.util.enums.StatusIdEnum;
+import com.alibaba.fastjson.JSON;
 import com.business.system.util.enums.UserTypeEnum;
 import com.business.system.web.bean.qo.FormatTypeDetailQO;
 import com.business.system.web.bean.vo.FormatTypeDetailVO;
@@ -122,6 +121,16 @@ public class FormatTypeController extends BaseController {
 		if(CollectionUtil.isNotEmpty(formatTypeDetailList)){
 			modelMap.put("formatTypeDetailList", formatTypeDetailList);
 		}
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "getFormatTypeDetail")
+	public String getFormatTypeDetail(@RequestParam(value = "id")Long id){
+		List<FormatTypeDetailVO> formatTypeDetailVOS = formatTypeDetailService.queryForList(FormatTypeDetailQO.builder().formatTypeId(id).build());
+		if(CollectionUtil.isNotEmpty(formatTypeDetailVOS)){
+			return JSON.toJSONString(formatTypeDetailVOS);
+		}
+		return "";
 	}
 
 
