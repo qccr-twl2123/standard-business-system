@@ -18,7 +18,7 @@
                         <#include "formatTypeDetail.ftl" />
                     </div>
                     <div class="tab-pane fade" id="aliasTab">
-                        <#--<#include "/admin/formateType/formatTypeDetail.ftl" />-->
+                        <#include "formatDetailAlias.ftl" />
                     </div>
                 </div>
             </fieldset>

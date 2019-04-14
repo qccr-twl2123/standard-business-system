@@ -1,6 +1,11 @@
 package com.business.system.web.controller.admin;
 
+import cn.hutool.core.collection.CollectionUtil;
+import com.business.system.common.entity.FormatTypeDetail;
+import com.business.system.util.enums.StatusIdEnum;
+import com.business.system.util.enums.UserTypeEnum;
 import com.business.system.web.bean.qo.FormatTypeDetailQO;
+import com.business.system.web.bean.vo.FormatTypeDetailVO;
 import com.business.system.web.service.FormatTypeDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +18,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.business.system.web.service.FormatTypeService;
 import com.business.system.web.bean.qo.FormatTypeQO;
 import com.business.system.util.base.BaseController;
+
+import java.util.List;
 
 /**
  * 规格类型表
@@ -101,9 +108,25 @@ public class FormatTypeController extends BaseController {
 
 	}
 
+	@RequestMapping(value = "formatDetailAlias")
+	public void formatDetailAlias(@ModelAttribute FormatTypeDetailQO qo, ModelMap modelMap){
+
+	}
+
+
 	@RequestMapping(value = "/view")
 	public void view(@RequestParam(value = "id") Long id, ModelMap modelMap){
 		modelMap.put("bean", service.getById(id));
+		//遍历所有规格值
+		List<FormatTypeDetailVO> formatTypeDetailList =  formatTypeDetailService.queryForList(FormatTypeDetailQO.builder().formatTypeId(id).build());
+		if(CollectionUtil.isNotEmpty(formatTypeDetailList)){
+			modelMap.put("formatTypeDetailList", formatTypeDetailList);
+		}
 	}
 
+
+	@ModelAttribute
+	public void enums(ModelMap modelMap) {
+		modelMap.put("userTypeEnums", UserTypeEnum.values());
+	}
 }
