@@ -315,63 +315,63 @@ public class FormatDetailAliasExample {
             return (Criteria) this;
         }
 
-        public Criteria andFormateTypeDetailIdIsNull() {
-            addCriterion("formate_type_detail_id is null");
+        public Criteria andFormatTypeDetailIdIsNull() {
+            addCriterion("format_type_detail_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andFormateTypeDetailIdIsNotNull() {
-            addCriterion("formate_type_detail_id is not null");
+        public Criteria andFormatTypeDetailIdIsNotNull() {
+            addCriterion("format_type_detail_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andFormateTypeDetailIdEqualTo(Long value) {
-            addCriterion("formate_type_detail_id =", value, "formateTypeDetailId");
+        public Criteria andFormatTypeDetailIdEqualTo(Long value) {
+            addCriterion("format_type_detail_id =", value, "formatTypeDetailId");
             return (Criteria) this;
         }
 
-        public Criteria andFormateTypeDetailIdNotEqualTo(Long value) {
-            addCriterion("formate_type_detail_id <>", value, "formateTypeDetailId");
+        public Criteria andFormatTypeDetailIdNotEqualTo(Long value) {
+            addCriterion("format_type_detail_id <>", value, "formatTypeDetailId");
             return (Criteria) this;
         }
 
-        public Criteria andFormateTypeDetailIdGreaterThan(Long value) {
-            addCriterion("formate_type_detail_id >", value, "formateTypeDetailId");
+        public Criteria andFormatTypeDetailIdGreaterThan(Long value) {
+            addCriterion("format_type_detail_id >", value, "formatTypeDetailId");
             return (Criteria) this;
         }
 
-        public Criteria andFormateTypeDetailIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("formate_type_detail_id >=", value, "formateTypeDetailId");
+        public Criteria andFormatTypeDetailIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("format_type_detail_id >=", value, "formatTypeDetailId");
             return (Criteria) this;
         }
 
-        public Criteria andFormateTypeDetailIdLessThan(Long value) {
-            addCriterion("formate_type_detail_id <", value, "formateTypeDetailId");
+        public Criteria andFormatTypeDetailIdLessThan(Long value) {
+            addCriterion("format_type_detail_id <", value, "formatTypeDetailId");
             return (Criteria) this;
         }
 
-        public Criteria andFormateTypeDetailIdLessThanOrEqualTo(Long value) {
-            addCriterion("formate_type_detail_id <=", value, "formateTypeDetailId");
+        public Criteria andFormatTypeDetailIdLessThanOrEqualTo(Long value) {
+            addCriterion("format_type_detail_id <=", value, "formatTypeDetailId");
             return (Criteria) this;
         }
 
-        public Criteria andFormateTypeDetailIdIn(List<Long> values) {
-            addCriterion("formate_type_detail_id in", values, "formateTypeDetailId");
+        public Criteria andFormatTypeDetailIdIn(List<Long> values) {
+            addCriterion("format_type_detail_id in", values, "formatTypeDetailId");
             return (Criteria) this;
         }
 
-        public Criteria andFormateTypeDetailIdNotIn(List<Long> values) {
-            addCriterion("formate_type_detail_id not in", values, "formateTypeDetailId");
+        public Criteria andFormatTypeDetailIdNotIn(List<Long> values) {
+            addCriterion("format_type_detail_id not in", values, "formatTypeDetailId");
             return (Criteria) this;
         }
 
-        public Criteria andFormateTypeDetailIdBetween(Long value1, Long value2) {
-            addCriterion("formate_type_detail_id between", value1, value2, "formateTypeDetailId");
+        public Criteria andFormatTypeDetailIdBetween(Long value1, Long value2) {
+            addCriterion("format_type_detail_id between", value1, value2, "formatTypeDetailId");
             return (Criteria) this;
         }
 
-        public Criteria andFormateTypeDetailIdNotBetween(Long value1, Long value2) {
-            addCriterion("formate_type_detail_id not between", value1, value2, "formateTypeDetailId");
+        public Criteria andFormatTypeDetailIdNotBetween(Long value1, Long value2) {
+            addCriterion("format_type_detail_id not between", value1, value2, "formatTypeDetailId");
             return (Criteria) this;
         }
 

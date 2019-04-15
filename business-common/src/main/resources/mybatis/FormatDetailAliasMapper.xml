@@ -5,7 +5,7 @@
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="alias_name" property="aliasName" jdbcType="VARCHAR" />
     <result column="format_type_id" property="formatTypeId" jdbcType="BIGINT" />
-    <result column="formate_type_detail_id" property="formateTypeDetailId" jdbcType="BIGINT" />
+    <result column="format_type_detail_id" property="formatTypeDetailId" jdbcType="BIGINT" />
     <result column="create_person" property="createPerson" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_person" property="updatePerson" jdbcType="VARCHAR" />
@@ -70,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, alias_name, format_type_id, formate_type_detail_id, create_person, create_time, 
+    id, alias_name, format_type_id, format_type_detail_id, create_person, create_time, 
     update_person, update_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.business.system.common.entity.FormatDetailAliasExample" >
@@ -108,10 +108,10 @@
   </delete>
   <insert id="insert" parameterType="com.business.system.common.entity.FormatDetailAlias" >
     insert into format_detail_alias (id, alias_name, format_type_id, 
-      formate_type_detail_id, create_person, create_time, 
+      format_type_detail_id, create_person, create_time, 
       update_person, update_time)
     values (#{id,jdbcType=BIGINT}, #{aliasName,jdbcType=VARCHAR}, #{formatTypeId,jdbcType=BIGINT}, 
-      #{formateTypeDetailId,jdbcType=BIGINT}, #{createPerson,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{formatTypeDetailId,jdbcType=BIGINT}, #{createPerson,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updatePerson,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.business.system.common.entity.FormatDetailAlias" >
@@ -126,8 +126,8 @@
       <if test="formatTypeId != null" >
         format_type_id,
       </if>
-      <if test="formateTypeDetailId != null" >
-        formate_type_detail_id,
+      <if test="formatTypeDetailId != null" >
+        format_type_detail_id,
       </if>
       <if test="createPerson != null" >
         create_person,
@@ -152,8 +152,8 @@
       <if test="formatTypeId != null" >
         #{formatTypeId,jdbcType=BIGINT},
       </if>
-      <if test="formateTypeDetailId != null" >
-        #{formateTypeDetailId,jdbcType=BIGINT},
+      <if test="formatTypeDetailId != null" >
+        #{formatTypeDetailId,jdbcType=BIGINT},
       </if>
       <if test="createPerson != null" >
         #{createPerson,jdbcType=VARCHAR},
@@ -187,8 +187,8 @@
       <if test="record.formatTypeId != null" >
         format_type_id = #{record.formatTypeId,jdbcType=BIGINT},
       </if>
-      <if test="record.formateTypeDetailId != null" >
-        formate_type_detail_id = #{record.formateTypeDetailId,jdbcType=BIGINT},
+      <if test="record.formatTypeDetailId != null" >
+        format_type_detail_id = #{record.formatTypeDetailId,jdbcType=BIGINT},
       </if>
       <if test="record.createPerson != null" >
         create_person = #{record.createPerson,jdbcType=VARCHAR},
@@ -212,7 +212,7 @@
     set id = #{record.id,jdbcType=BIGINT},
       alias_name = #{record.aliasName,jdbcType=VARCHAR},
       format_type_id = #{record.formatTypeId,jdbcType=BIGINT},
-      formate_type_detail_id = #{record.formateTypeDetailId,jdbcType=BIGINT},
+      format_type_detail_id = #{record.formatTypeDetailId,jdbcType=BIGINT},
       create_person = #{record.createPerson,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_person = #{record.updatePerson,jdbcType=VARCHAR},
@@ -230,8 +230,8 @@
       <if test="formatTypeId != null" >
         format_type_id = #{formatTypeId,jdbcType=BIGINT},
       </if>
-      <if test="formateTypeDetailId != null" >
-        formate_type_detail_id = #{formateTypeDetailId,jdbcType=BIGINT},
+      <if test="formatTypeDetailId != null" >
+        format_type_detail_id = #{formatTypeDetailId,jdbcType=BIGINT},
       </if>
       <if test="createPerson != null" >
         create_person = #{createPerson,jdbcType=VARCHAR},
@@ -252,7 +252,7 @@
     update format_detail_alias
     set alias_name = #{aliasName,jdbcType=VARCHAR},
       format_type_id = #{formatTypeId,jdbcType=BIGINT},
-      formate_type_detail_id = #{formateTypeDetailId,jdbcType=BIGINT},
+      format_type_detail_id = #{formatTypeDetailId,jdbcType=BIGINT},
       create_person = #{createPerson,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_person = #{updatePerson,jdbcType=VARCHAR},

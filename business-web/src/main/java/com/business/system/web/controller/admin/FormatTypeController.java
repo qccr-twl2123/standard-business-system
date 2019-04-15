@@ -1,10 +1,13 @@
 package com.business.system.web.controller.admin;
 
-import cn.hutool.core.collection.CollectionUtil;
 import com.alibaba.fastjson.JSON;
+import com.business.system.util.bjui.Page;
+import com.business.system.util.enums.StatusIdEnum;
 import com.business.system.util.enums.UserTypeEnum;
+import com.business.system.web.bean.qo.FormatDetailAliasQO;
 import com.business.system.web.bean.qo.FormatTypeDetailQO;
 import com.business.system.web.bean.vo.FormatTypeDetailVO;
+import com.business.system.web.service.FormatDetailAliasService;
 import com.business.system.web.service.FormatTypeDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,6 +39,8 @@ public class FormatTypeController extends BaseController {
 	private FormatTypeService service;
 	@Autowired
 	private FormatTypeDetailService formatTypeDetailService;
+	@Autowired
+	private FormatDetailAliasService formatDetailAliasService;
 
 	@RequestMapping(value = "/list")
 	public void list(@RequestParam(value = "pageCurrent", defaultValue = "1") int pageCurrent, @RequestParam(value = "pageSize", defaultValue = "20") int pageSize, @ModelAttribute FormatTypeQO qo, ModelMap modelMap){
@@ -112,30 +117,50 @@ public class FormatTypeController extends BaseController {
 
 	}
 
+	@RequestMapping(value = "addFormatDetailAlias")
+	public void addFormatDetailAlias(@ModelAttribute FormatTypeDetailQO qo, ModelMap modelMap){
+		modelMap.put("bean", qo);
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "saveFormatDetailAlias")
+	public String saveFormatDetailAlias(@ModelAttribute FormatDetailAliasQO qo){
+		if(formatDetailAliasService.save(qo)>0){
+			return success(TARGETID);
+		}
+		return error("保存失败");
+	}
+
 
 	@RequestMapping(value = "/view")
 	public void view(@RequestParam(value = "id") Long id, ModelMap modelMap){
 		modelMap.put("bean", service.getById(id));
 		//遍历所有规格值
 		List<FormatTypeDetailVO> formatTypeDetailList =  formatTypeDetailService.queryForList(FormatTypeDetailQO.builder().formatTypeId(id).build());
-		if(CollectionUtil.isNotEmpty(formatTypeDetailList)){
-			modelMap.put("formatTypeDetailList", formatTypeDetailList);
-		}
+		modelMap.put("formatTypeDetailList", formatTypeDetailList);
 	}
 
 	@ResponseBody
 	@RequestMapping(value = "getFormatTypeDetail")
-	public String getFormatTypeDetail(@RequestParam(value = "id")Long id){
-		List<FormatTypeDetailVO> formatTypeDetailVOS = formatTypeDetailService.queryForList(FormatTypeDetailQO.builder().formatTypeId(id).build());
-		if(CollectionUtil.isNotEmpty(formatTypeDetailVOS)){
-			return JSON.toJSONString(formatTypeDetailVOS);
+	public String getFormatTypeDetail(@RequestParam(value = "id")Long id,@RequestParam(value = "pageCurrent", defaultValue = "1") int pageCurrent, @RequestParam(value = "pageSize", defaultValue = "20") int pageSize){
+		Page<FormatTypeDetailVO>  page = formatTypeDetailService.listForPage(pageCurrent, pageSize, FormatTypeDetailQO.builder().formatTypeId(id).build());
+		return JSON.toJSONString(page);
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "deleteFormatTypeDetail")
+	public String deleteFormatTypeDetail(Long id){
+		if(formatTypeDetailService.deleteById(id) > 0){
+			return success(TARGETID);
 		}
-		return "";
+
+		return error("删除失败");
 	}
 
 
 	@ModelAttribute
 	public void enums(ModelMap modelMap) {
 		modelMap.put("userTypeEnums", UserTypeEnum.values());
+		modelMap.put("statusIdEnums", StatusIdEnum.values());
 	}
 }

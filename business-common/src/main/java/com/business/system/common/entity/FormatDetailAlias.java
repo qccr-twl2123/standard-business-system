@@ -10,7 +10,7 @@ public class FormatDetailAlias implements Serializable {
 
     private Long formatTypeId;
 
-    private Long formateTypeDetailId;
+    private Long formatTypeDetailId;
 
     private String createPerson;
 
@@ -46,12 +46,12 @@ public class FormatDetailAlias implements Serializable {
         this.formatTypeId = formatTypeId;
     }
 
-    public Long getFormateTypeDetailId() {
-        return formateTypeDetailId;
+    public Long getFormatTypeDetailId() {
+        return formatTypeDetailId;
     }
 
-    public void setFormateTypeDetailId(Long formateTypeDetailId) {
-        this.formateTypeDetailId = formateTypeDetailId;
+    public void setFormatTypeDetailId(Long formatTypeDetailId) {
+        this.formatTypeDetailId = formatTypeDetailId;
     }
 
     public String getCreatePerson() {
@@ -95,7 +95,7 @@ public class FormatDetailAlias implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", aliasName=").append(aliasName);
         sb.append(", formatTypeId=").append(formatTypeId);
-        sb.append(", formateTypeDetailId=").append(formateTypeDetailId);
+        sb.append(", formatTypeDetailId=").append(formatTypeDetailId);
         sb.append(", createPerson=").append(createPerson);
         sb.append(", createTime=").append(createTime);
         sb.append(", updatePerson=").append(updatePerson);

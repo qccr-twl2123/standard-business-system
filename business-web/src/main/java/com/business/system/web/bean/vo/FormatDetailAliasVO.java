@@ -32,7 +32,7 @@ public class FormatDetailAliasVO implements Serializable {
     /**
      * 规格项明细Id
      */
-    private Long formateTypeDetailId;
+    private Long formatTypeDetailId;
     /**
      * 创建人
      */
