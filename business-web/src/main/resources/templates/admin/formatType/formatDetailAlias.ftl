@@ -16,7 +16,7 @@
                     </#list>
                 </#if>
             </select>
-            <#--<a href="${base}/admin/formatType/addFormatDetailAlias?formatTypeId=${bean.id}" onclick="addFormatDetailAlias()" class="btn btn-default" data-toggle="dialog" data-icon="plus" data-id="formatType-add" data-options="{title:'新增别名', height:350}">新增别名</a>-->
+            <a href="${base}/admin/formatType/addFormatDetailAlias?formatTypeId=${bean.id}" class="btn btn-default" data-toggle="dialog" data-icon="plus" data-id="formatType-add" data-options="{title:'新增别名', height:350}">新增别名</a>
         </div>
     </div>
     <br/>
@@ -39,11 +39,7 @@
     </table>
 </div>
 <script>
-    function addFormatDetailAlias(formatTypeId) {
-        var formatDetailAliasId = $("#formatDetailAliasId").val();
-        alert(formatDetailAliasId);
-        self.location.href="${base}/admin/formatType/addFormatDetailAlias?formatTypeId='"+formatTypeId+"'&formatDetailAliasId='"+formatDetailAliasId+"'";
-    }
+
 
 </script>
 
